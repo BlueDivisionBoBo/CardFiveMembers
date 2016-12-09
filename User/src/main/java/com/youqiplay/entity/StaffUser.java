@@ -43,6 +43,7 @@ public class StaffUser {
         this.setIsEnable(staffUserShow.getIsEnable());
     }
 
+
     public StaffUser() {
     }
 
