@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>卡五星后台管理后台</title>
+	<script src="../js/jquery-1.11.1.min.js"></script>
+ <link href="css/login.css" rel="stylesheet" type="text/css" media="all"/>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content=""/>
+
+</head>
+<body>
+<div class="login">
+	<h2>卡五星后台管理后台</h2>
+	<div class="login-top">
+ 		<form>
+			<input type="text" value="用户名" id="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}">
+			<input type="password" value="密码" id="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '密码';}">
+	    </form>
+	    <div class="forgot">
+	    	<a href="#">忘记密码</a>
+	    	<input type="submit" value="登录"  onclick="loginIn()">
+	    </div>
+	</div>
+	<div class="login-bottom">
+		<h3>新用户 &nbsp;<a href="#">注册</a>&nbsp</h3>
+	</div>
+</div>
+
+
+<script>
+
+	function loginIn(){
+       var name =  $("#username").val();
+       var password = $("#password").val();
+       if(name== null || ""== name.trim() || password==null || ""==password.trim()){
+           alert("用户名或密码..不能为空");
+	   }
+        $.ajax({ url: "api/user/login",
+			method:"GET",
+            data:{"name":$("#username").val(),
+				"password":$("#password").val(),
+			"date":new Date().getTime()},
+			success: function(data){
+            if (data.status == "true"){
+                window.location.href = 'index.do';
+			}else {
+                alert(data.message);
+			}
+         //   $(this).addClass("done");
+        }});
+	}
+
+</script>
+</body>
+</html>

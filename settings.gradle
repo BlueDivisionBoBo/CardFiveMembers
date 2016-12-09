@@ -1,0 +1,4 @@
+rootProject.name = 'CardFiveMembers'
+include 'Abstract'
+include 'User'
+

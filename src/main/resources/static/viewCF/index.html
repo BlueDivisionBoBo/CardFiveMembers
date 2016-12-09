@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>卡五星后台管理系统</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/datepicker3.css" rel="stylesheet">
+    <link href="../css/bootstrap-table.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>卡五星后台</span>管理系统</a>
+                <ul class="user-menu">
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 张三</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <form role="search">
+            <div class="form-group">
+                <h4>导航</h4>
+            </div>
+        </form>
+        <ul class="nav menu">
+            <li class="active" data-class="homePage"><a href="index.do"><span class="glyphicon glyphicon-dashboard"></span> 首页</a></li>
+            <li data-class="sale"><a href="javascript:;"><span class="glyphicon glyphicon-th"></span> 出售</a></li>
+            <li data-class="recharge"><a href="javascript:;"><span class="glyphicon glyphicon-stats"></span> 充值</a></li>
+            <li data-class="saleRecord"><a href="javascript:;"><span class="glyphicon glyphicon-list-alt"></span> 出售记录</a></li>
+            <li data-class="rechargeRecord"><a href="javascript:;"><span class="glyphicon glyphicon-pencil"></span> 充值记录</a></li>
+            <li data-class="myMember"><a href="javascript:;"><span class="glyphicon glyphicon-info-sign"></span>我的会员</a></li>
+            <li data-class="setting"><a h ref="javascript:;"><span class="glyphicon glyphicon-info-sign"></span>设置</a></li>
+            <li role="presentation" class="divider"></li>
+            <li data-class=""><a href="#"><span class="glyphicon glyphicon-user"></span>退出</a></li>
+        </ul>
+    </div>
+    <!--/.sidebar-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <!-- 主页 -->
+        <div class="maintent homePage">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">用户信息</div>
+                        <div class="panel-body">
+                            <div class="col-md-3">
+                                <img src="../images/banner.jpg" alt="" class="img-rounded">
+                            </div>
+                            <div class="col-md-9">
+                                <h3>汪洋</h3>
+                                <p>余额：340</p>
+                                <p>推荐反利：100</p>
+                                <p>累计充值返利</p>
+                            </div>
+                        </div>
+                        <div class="page-header bg-primary ">
+                            <h6>公告</h6></div>
+                        <p class="panel-body">这是一个示公告。这是一个示公告。这是一个示公告。这是一个示公告。这是一个示公告。这是一个示公告。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 出售 -->
+        <div class="maintent sale">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">出售</div>
+                        <div class="panel-body">
+                            <div class="col-md-9">
+                                <h3>第一步：输入玩家ID</h3>
+                                <input class="form-control width50" type="text" placeholder="请输入用户ID…">
+                                <h3>第二步：搜索玩家</h3>
+                                <button class="btn btn-info width50 " data-loading-text=" ">搜索</button>
+                                <h3>添加钻石</h3>
+                                <button class="btn btn-info  width50" data-loading-text="">确定添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 充值 -->
+        <div class="maintent recharge">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">充值</div>
+                        <div class="panel-body">
+                            <div class="col-md-3 chargebox">
+                                <h7>充值：<span>500钻石</span></h7>
+                                <h7>赠送：<span>300钻石</span></h7>
+                                <h7>价格：<span>300元</span></h7>
+                                <h7>
+                                    <button class="btn btn-info  width50" data-loading-text="">购买</button>
+                                </h7>
+                            </div>
+                            <div class="col-md-3 chargebox">
+                                <h7>充值：<span>500钻石</span></h7>
+                                <h7>赠送：<span>300钻石</span></h7>
+                                <h7>价格：<span>300元</span></h7>
+                                <h7>
+                                    <button class="btn btn-info  width50" data-loading-text="">购买</button>
+                                </h7>
+                            </div>
+                            <div class="col-md-3 chargebox">
+                                <h7>充值：<span>500钻石</span></h7>
+                                <h7>赠送：<span>300钻石</span></h7>
+                                <h7>价格：<span>300元</span></h7>
+                                <h7>
+                                    <button class="btn btn-info  width50" data-loading-text="">购买</button>
+                                </h7>
+                            </div>
+                            <div class="col-md-3 chargebox">
+                                <h7>充值：<span>500钻石</span></h7>
+                                <h7>赠送：<span>300钻石</span></h7>
+                                <h7>价格：<span>300元</span></h7>
+                                <h7>
+                                    <button class="btn btn-info  width50" data-loading-text="">购买</button>
+                                </h7>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 出售记录 -->
+        <div class="maintent saleRecord">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">出售记录</div>
+                        <div class="panel-body">
+                            <table data-toggle="table" data-url="tables/data2.json" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id" data-align="right">玩家ID</th>
+                                        <th data-field="name">数量</th>
+                                        <th data-field="price">金额</th>
+                                        <th data-field="price">时间</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 充值记录 -->
+        <div class="maintent rechargeRecord">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">充值记录</div>
+                        <div class="panel-body">
+                            <table data-toggle="table" data-url="tables/data2.json" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id" data-align="right">玩家ID</th>
+                                        <th data-field="name">数量</th>
+                                        <th data-field="price">充值金额</th>
+                                        <th data-field="price">充值时间</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 我的会员  -->
+        <div class="maintent myMember">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">我的会员</div>
+                        <div class="panel-body">
+                            <table data-toggle="table" data-url="tables/data2.json" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-field="id" data-align="right">会员ID</th>
+                                        <th data-field="name">昵称</th>
+                                        <th data-field="price">姓名</th>
+                                        <th data-field="price">返利</th>
+                                        <th data-field="price">时间</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 设置 -->
+        <div class="maintent setting">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">设置</div>
+                        <div class="panel-body">
+                            <div class="col-md-9">
+                                <h7>用户ID：<span>123123</span></h7>
+                                <h7>昵称：<span>右耳</span></h7>
+                                <h7>手机：<span>153546545465</span></h7>
+                                <h7>注册时间:<span>2016-1-1</span></h7>
+                                <h7>
+                                    <button class="btn btn-info width30 " data-loading-text=" ">修改密码</button>
+                                </h7>
+                                <h7>
+                                    <button class="btn btn-info  width30" data-loading-text="">修改手机</button>
+                                </h7>
+                                <h7>
+                                    <button class="btn btn-info  width30" data-loading-text="">安全设置</button>
+                                </h7>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.main-->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../js/bootstrap-table.js"></script>
+    <script>
+    $(function() {
+        navClickEvent();
+    })
+
+    $(window).on('resize', function() {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show');
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+
+    //   左侧导航点击事件
+    function navClickEvent() {
+        $(".menu li").on("click", function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            var data_class = $(this).attr("data-class");
+            if (data_class == "") {
+                window.location.href = '/'
+            } else {
+                $(".maintent").css("display", "none");
+                $("." + data_class).css("display", "block");
+            }
+
+        })
+
+
+    }
+    </script>
+</body>
+
+</html>

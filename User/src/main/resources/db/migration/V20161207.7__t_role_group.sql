@@ -1,0 +1,6 @@
+CREATE TABLE `t_role_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(20) NOT NULL COMMENT '名称',
+  `remark` VARCHAR(255) COLLATE utf8_bin DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT '角色组';

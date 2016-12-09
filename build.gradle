@@ -1,0 +1,74 @@
+group 'CardFiveMembers'
+version '1.0-SNAPSHOT'
+
+
+buildscript {
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.flywaydb:flyway-gradle-plugin:4.0.3")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'idea'
+apply plugin: 'org.flywaydb.flyway'
+
+jar {
+    baseName = 'CardFiveMembers'
+    version = '1.0'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile project(":Abstract")
+    compile project(":User")
+//    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '8.5.5'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+//task fMp(type: JavaExec) {
+//    classpath = sourceSets.main.runtimeClasspath
+//    println(classpath)
+//    main = 'com.bobo.data.FlywayDataMig'
+//    args 'primary'
+//    args 'migrate'
+//}
+//
+//task fCp(type: JavaExec) {
+//    classpath = sourceSets.main.runtimeClasspath
+//    println(classpath)
+//    main = 'com.bobo.data.FlywayDataMig'
+//    args 'primary'
+//    args 'clean'
+//}
+//
+//task fMs(type: JavaExec) {
+//    classpath = sourceSets.main.runtimeClasspath
+//    println(classpath)
+//    main = 'com.bobo.data.FlywayDataMig'
+//    args 'secondary'
+//    args 'migrate'
+//}
+//
+//task fCs(type: JavaExec) {
+//    classpath = sourceSets.main.runtimeClasspath
+//    println(classpath)
+//    main = 'com.bobo.data.FlywayDataMig'
+//    args 'secondary'
+//    args 'clean'
+//}
