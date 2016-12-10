@@ -51,6 +51,9 @@ public class LoginFilter implements Filter {
                     rp.sendRedirect("/");
                     return;
                 }
+            }else {
+                rp.sendRedirect("/");
+                return;
             }
 
         }

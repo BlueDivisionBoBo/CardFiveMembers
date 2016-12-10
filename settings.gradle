@@ -1,4 +1,6 @@
 rootProject.name = 'CardFiveMembers'
 include 'Abstract'
 include 'User'
+include 'Recharge'
+include 'Sell'
 

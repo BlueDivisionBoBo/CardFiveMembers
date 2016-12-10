@@ -26,7 +26,8 @@ public class UserController {
     @RequestMapping(value = "/user/login",method = RequestMethod.GET)
     public ObjectResult login(@RequestParam(value = "name") String name,
                               @RequestParam(value = "password") String password,
-                              @CookieValue(value = "uid",required = false) CookieValue cookieValue,
+                              @RequestParam(value = "date") String date,
+                          //    @CookieValue(value = "uid",required = false) CookieValue cookieValue,
                               HttpServletRequest servletRequest,
                               HttpServletResponse servletResponse){
 
@@ -36,15 +37,15 @@ public class UserController {
 
      //   servletRequest.setAttribute();
       //  Cookie cookie = new Cookie("token", token);
-        if (cookieValue!=null){
-            String value = cookieValue.value();
-            Object attribute = servletRequest.getSession().getAttribute(value);
-            if(attribute!=null){
-                return new ObjectResult("true","登录成功");
-            }else {
-                return new ObjectResult("false","请重新登录");
-            }
-        }
+//        if (cookieValue!=null){
+//            String value = cookieValue.value();
+//            Object attribute = servletRequest.getSession().getAttribute(value);
+//            if(attribute!=null){
+//                return new ObjectResult("true","登录成功");
+//            }else {
+//                return new ObjectResult("false","请重新登录");
+//            }
+//        }
         StaffUserShow login = iStaffUserService.login(name, password);
         if (login!=null){
             int seconds = 60*60*24;
