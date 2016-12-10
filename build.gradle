@@ -1,7 +1,3 @@
-group 'CardFiveMembers'
-version '1.0-SNAPSHOT'
-
-
 buildscript {
     ext {
         springBootVersion = '1.4.1.RELEASE'
