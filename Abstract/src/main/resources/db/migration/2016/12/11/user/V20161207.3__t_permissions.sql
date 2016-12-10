@@ -9,4 +9,4 @@ CREATE TABLE `t_permissions` (
   `create_user` varchar(50) DEFAULT NULL COMMENT '创建用户',
   `is_enable` char(1) DEFAULT '1' COMMENT '是否可用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='权限';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='权 限';

@@ -5,4 +5,4 @@ CREATE TABLE `t_login_info` (
   `address` varchar(10) COLLATE utf8_bin DEFAULT NULL COMMENT '地址',
   `source` int(2) COLLATE utf8_bin DEFAULT NULL COMMENT '来源',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='登录信息表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='登录信 息表';

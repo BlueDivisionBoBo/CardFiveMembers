@@ -9,5 +9,3 @@ CREATE TABLE `t_sell` (
   `is_enable` char(1) DEFAULT '1' COMMENT '是否可用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='出售记录表';
-
-

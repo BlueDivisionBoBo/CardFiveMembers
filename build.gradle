@@ -14,7 +14,6 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'spring-boot'
 apply plugin: 'idea'
-apply plugin: 'org.flywaydb.flyway'
 
 jar {
     baseName = 'CardFiveMembers'
