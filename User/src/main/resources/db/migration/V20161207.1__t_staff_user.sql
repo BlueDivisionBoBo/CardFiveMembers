@@ -17,7 +17,7 @@ CREATE TABLE `t_staff_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='后台登陆账户表';
 
-INSERT INTO `t_staff_user` VALUES (1, 'admin', NULL, '1234', '13554011992',
-                                      'admin', 'admin', 1, 1, 1, '2016-12-9 00:05:37',
+INSERT INTO `t_staff_user` VALUES (1, 'admin', NULL, '7892', '13554011992',
+                                      'admin', '15ad818ae7c2f123afec0c4a391746c2', 1, 1, 1, '2016-12-9 00:05:37',
                                    NULL, '2016-12-9 00:05:21', '', '1');
 
