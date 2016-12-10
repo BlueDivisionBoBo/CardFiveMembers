@@ -2,6 +2,7 @@ package com.youqiplay.user.controller;
 
 import com.youqiplay.shared.ObjectResult;
 import com.youqiplay.user.IStaffUserService;
+import com.youqiplay.user.PPN;
 import com.youqiplay.user.StaffUserShow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,9 @@ public class UserController {
 
     @Autowired
     IStaffUserService iStaffUserService;
+
+
+
 
     @RequestMapping(value = "/user/login",method = RequestMethod.GET)
     public ObjectResult login(@RequestParam(value = "name") String name,
@@ -64,5 +68,14 @@ public class UserController {
             return new ObjectResult("false","帐号或者密码不正确");
         }
 
+    }
+
+    @RequestMapping(value = "/ppn",method = RequestMethod.GET)
+    public ObjectResult getPPn(@RequestParam("name") String name){
+        PPN ppn = iStaffUserService.getPPn(name);
+        if (ppn == null ){
+            return new ObjectResult("fasle","帐号或者密码错误,请重新输入");
+        }
+        return new ObjectResult("true",ppn);
     }
 }

@@ -5,4 +5,7 @@ package com.youqiplay.user;
  */
 public interface IStaffUserService {
     StaffUserShow login(String name,String password);
+
+
+    PPN getPPn(String name);
 }

@@ -10,6 +10,9 @@ import org.springframework.data.jpa.repository.Query;
 public interface StaffRepository extends JpaRepository<StaffUser, Integer> {
 
 
-    @Query("select o from StaffUser o where (o.account = ?1 or o.phone = ?1 ) and o.password = ?2 ")
+    @Query("select o from StaffUser o where (o.account = ?1 or o.phone = ?1 ) and o.password = MD5(concat(?2,o.pp)) ")
     StaffUser login(String name, String password);
+
+    @Query("select o.pp from StaffUser o where o.account = ?1 or o.phone = ?1 ")
+    String getPPn(String name);
 }

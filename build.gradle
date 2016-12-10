@@ -37,6 +37,7 @@ dependencies {
     compile project(":User")
     compile project(":Sell")
     compile project(":Recharge")
+    compile project(":Shared")
 //    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '8.5.5'
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile('org.springframework.boot:spring-boot-starter-test')
