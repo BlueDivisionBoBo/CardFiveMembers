@@ -35,7 +35,12 @@ public class StaffUserService implements IStaffUserService{
 //        String passwordSs = YYMD5.EncryptionStr(passwordS + pPn);
         StaffUser login = staffRepository.login(name, passwordS);
         if (login == null )return null;
-        return new StaffUserShowEX(login);
+        StaffUserShow staffUserShow = new StaffUserShow();
+        BeanShift.beanTransform(login,staffUserShow);
+        if( staffUserShow.getImage() == null ){
+            staffUserShow.setImage("images/banner.jpg");
+        }
+        return staffUserShow;
     }
 
     @Override
@@ -85,8 +90,11 @@ public class StaffUserService implements IStaffUserService{
         if (user == null){
             return null;
         }
-        return new StaffUserShowEX(user);
-
-
+        StaffUserShow staffUserShow = new StaffUserShow();
+        BeanShift.beanTransform(user,staffUserShow);
+        if( staffUserShow.getImage() == null ){
+            staffUserShow.setImage("images/banner.jpg");
+        }
+        return staffUserShow;
     }
 }

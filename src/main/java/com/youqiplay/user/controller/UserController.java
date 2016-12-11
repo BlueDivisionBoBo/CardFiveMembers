@@ -119,6 +119,21 @@ public class UserController {
     }
 
 
+    @RequestMapping(value = "/userInfo.do",method = RequestMethod.GET)
+    public ObjectResult getUserInfo( @CookieValue(value = "youqitoken",required = false) String cookieValue,
+                                     HttpServletRequest request,
+                                     HttpServletResponse response){
+        if (cookieValue == null){
+            return new ObjectResult("false","无此信息,请重新登录");
+        }
+        StaffUserShow attribute = (StaffUserShow) request.getSession().getAttribute(cookieValue);
+        if (attribute == null ){
+            return new ObjectResult("false","无此信息,请重新登录");
+        }
+        return new ObjectResult("true",attribute);
+    }
+
+
     /**
      * 添加用户
      * @param staffUserShow
