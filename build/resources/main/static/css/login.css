@@ -40,14 +40,14 @@ body{
   color: #fff;
   text-align: center;
   margin: 0px 0px 50px 0px;
-   
+
 }
 .login-top {
-  background: #E1E1E1;
-  border-radius: 25px 25px 0px 0px;
-  -webkit-border-radius:  25px 25px 0px 0px;
-  -moz-border-radius: 25px 25px 0px 0px;
-  -o-border-radius: 25px 25px 0px 0px;
+ background: #e1e1e1;
+  border-radius: 25px 25px 25px 25px;
+  -webkit-border-radius:  25px 25px 25px 25px;
+  -moz-border-radius: 25px 25px 25px 25px;
+  -o-border-radius: 25px 25px 25px 25px;
   padding: 40px 60px;
 }
 .login-top h1 {
