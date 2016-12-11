@@ -103,47 +103,45 @@ public class UserController {
     }
 
 
-//    /**
-//     * 用户详情
-//     * @param uid
-//     * @param cookieValue
-//     * @return
-//     */
-//    @RequestMapping(value = "/${uid}/user.do",method = RequestMethod.GET)
-//    public ObjectResult getUser(@PathVariable("uid")Integer uid,
-//                                @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
-//        StaffUserShow staffUserShow = iStaffUserService.getUser(uid);
-//        if (staffUserShow == null ){
-//            return new ObjectResult("fasle","没有该用户信息");
-//        }else {
-//            return new ObjectResult("true",staffUserShow);
-//        }
-//    }
+    /**
+     * 用户详情
+     * @param uid
+     * @return
+     */
+    @RequestMapping(value = "/{uid}/user.do",method = RequestMethod.GET)
+    public ObjectResult getUser(@PathVariable("uid")Integer uid){
+        StaffUserShow staffUserShow = iStaffUserService.getUser(uid);
+        if (staffUserShow == null ){
+            return new ObjectResult("fasle","没有该用户信息");
+        }else {
+            return new ObjectResult("true",staffUserShow);
+        }
+    }
 
 
-//    /**
-//     * 添加用户
-//     * @param staffUserShow
-//     * @param cookieValue
-//     * @return
-//     */
-//    @RequestMapping(value = "/user",method = RequestMethod.POST)
-//    public ObjectResult addUser(@RequestBody StaffUserShow staffUserShow,
-//                                @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
-//        return null;
-//    }
-//
-//
-//    /**
-//     * 修改用户
-//     * @param staffUserShow
-//     * @param cookieValue
-//     * @return
-//     */
-//    @RequestMapping(value = "/user",method = RequestMethod.PUT)
-//    public ObjectResult updateUser(@RequestBody StaffUserShow staffUserShow,
-//                                   @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
-//        return null;
-//    }
+    /**
+     * 添加用户
+     * @param staffUserShow
+     * @param cookieValue
+     * @return
+     */
+    @RequestMapping(value = "/user.do",method = RequestMethod.POST)
+    public ObjectResult addUser(@RequestBody StaffUserShow staffUserShow,
+                                @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
+        return null;
+    }
+
+
+    /**
+     * 修改用户
+     * @param staffUserShow
+     * @param cookieValue
+     * @return
+     */
+    @RequestMapping(value = "/{id}/user.do",method = RequestMethod.PUT)
+    public ObjectResult updateUser(@RequestBody StaffUserShow staffUserShow,
+                                   @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
+        return null;
+    }
 
 }
