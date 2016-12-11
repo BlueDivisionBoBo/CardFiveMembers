@@ -6,6 +6,7 @@ import com.youqiplay.user.ConditionShow;
 import com.youqiplay.user.IStaffUserService;
 import com.youqiplay.user.PPN;
 import com.youqiplay.user.StaffUserShow;
+import com.youqiplay.util.BeanShift;
 import com.youqiplay.util.StaffUserShowEX;
 import com.youqiplay.util.YYMD5;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +86,7 @@ public class StaffUserService implements IStaffUserService{
             return null;
         }
         return new StaffUserShowEX(user);
+
+
     }
 }

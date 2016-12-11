@@ -23,4 +23,6 @@ public class StaffUserShowEX  extends StaffUserShow{
             this.setCreateDate(staffUser.getCreateDate());
             this.setIsEnable(staffUser.getIsEnable());
     }
+
+
 }
