@@ -14,6 +14,8 @@ CREATE TABLE `t_staff_user` (
   `create_date` datetime DEFAULT NULL COMMENT '创建时间',
   `create_user` varchar(50) DEFAULT NULL COMMENT '创建用户',
   `is_enable` char(1) DEFAULT '1' COMMENT '是否可用',
+  UNIQUE KEY ('account'),
+  UNIQUE KEY ('phone'),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='后台登陆 账户表';
 

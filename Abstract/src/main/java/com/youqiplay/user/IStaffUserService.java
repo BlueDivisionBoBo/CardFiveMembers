@@ -1,5 +1,7 @@
 package com.youqiplay.user;
 
+import org.springframework.data.domain.Page;
+
 /**
  * Created by zhouyongbo on 2016/12/8.
  */
@@ -8,4 +10,8 @@ public interface IStaffUserService {
 
 
     PPN getPPn(String name);
+
+    Page<StaffUserShow> getUsers(ConditionShow conditionShow);
+
+    StaffUserShow getUser(Integer uid);
 }
