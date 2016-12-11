@@ -1,5 +1,6 @@
 package com.youqiplay.util;
 
+import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -13,9 +14,10 @@ public class UUIDUtils {
 
 
     public static int PPN(int n){
-       long lpowS= (long) Math.pow(10, n);
-        long lpowE= (long) Math.pow(10, n+1);
-        Math.
+        int lpowS= (int) Math.pow(10, n);
+        int lpowE=  (int)Math.pow(10, n+1);
+        Random random = new Random();
+        return lpowS+random.nextInt(lpowE-lpowS);
     }
 
 
