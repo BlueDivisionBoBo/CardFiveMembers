@@ -38,14 +38,14 @@ public class LoginFilter implements Filter {
             if (cookies !=null){
                 String mycookVlue = null;
                 for (Cookie cookie : cookies){
-                    if ("uid".equalsIgnoreCase(cookie.getName())) {
+                    if ("youqitoken".equalsIgnoreCase(cookie.getName())) {
                         mycookVlue = cookie.getValue();
                     }
                 }
                 HttpSession session = rq.getSession();
                 Object attribute = session.getAttribute(mycookVlue);
                 if (attribute == null ){
-                    Cookie cookie = new Cookie("uid", null);
+                    Cookie cookie = new Cookie("youqitoken", null);
                     cookie.setMaxAge(0);
                     rp.addCookie(cookie);
                     rp.sendRedirect("/");
