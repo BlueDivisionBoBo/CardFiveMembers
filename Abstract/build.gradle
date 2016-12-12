@@ -16,6 +16,7 @@ dependencies {
     runtime("mysql:mysql-connector-java:5.+")
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile("com.alibaba:fastjson:1.2.+")
 //    compile('org.springframework.boot:spring-boot-starter-data-jpa')
 //    compile('org.springframework.boot:spring-boot-starter-web')
 }

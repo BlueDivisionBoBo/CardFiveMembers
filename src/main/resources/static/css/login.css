@@ -131,7 +131,8 @@ body {
 
 }
 .verifyBox {
-    display: block;}
+    /*display: none;*/
+}
 
 .login-top {
     background: #e1e1e1;

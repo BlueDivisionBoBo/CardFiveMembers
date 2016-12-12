@@ -9,6 +9,7 @@
     <link href="../css/datepicker3.css" rel="stylesheet">
     <link href="../css/bootstrap-table.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
+    <script src="../script/ajax.js"></script>
 </head>
 
 <body>
@@ -63,8 +64,8 @@
                             <div class="col-md-9">
                                 <h3 id="userInfo_name">汪洋</h3>
                                 <p>余额：340</p>
-                                <p>推荐反利：100</p>
-                                <p>累计充值返利</p>
+                                <!--<p>推荐反利：100</p>-->
+                                <!--<p>累计充值返利</p>-->
                             </div>
                         </div>
                         <div class="page-header bg-primary ">
@@ -239,34 +240,6 @@
     <script src="../js/bootstrap-datepicker.js"></script>
     <script src="../js/bootstrap-table.js"></script>
     <script src="../script/index.js"></script>
-    <script>
-    $(function() {
-        navClickEvent();
-        readyHome();
-    })
-
-    $(window).on('resize', function() {
-        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show');
-        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-    })
-
-    //   左侧导航点击事件
-    function navClickEvent() {
-        $(".menu li").on("click", function() {
-            $(this).addClass('active').siblings().removeClass('active');
-            var data_class = $(this).attr("data-class");
-            if (data_class == "") {
-                window.location.href = '/'
-            } else {
-                $(".maintent").css("display", "none");
-                $("." + data_class).css("display", "block");
-            }
-
-        })
-
-
-    }
-    </script>
 </body>
 
 </html>

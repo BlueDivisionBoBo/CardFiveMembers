@@ -32,6 +32,18 @@ public class UserController {
     @Value("${youqiplay.cookie}")
     private String cookieName;
 
+    @Value("${com.hpe.web.baiduMapKey}")
+    private String baiduMapKey;
+
+
+    @Value("${com.youqiplay.url}")
+    private String baiduMapUrl;
+
+    @Value("${loginInfo.date}")
+    private String loginDate;
+
+    @Value("${loginInfo.verification.code.session}")
+    private String codeSession;
     /**
      * 登录
      * @param name
@@ -45,10 +57,15 @@ public class UserController {
     public ObjectResult login(@RequestParam(value = "name") String name,
                               @RequestParam(value = "password") String password,
                               @RequestParam(value = "date") String date,
-                          //    @CookieValue(value = "uid",required = false) CookieValue cookieValue,
+                              @RequestParam(value = "verificationCode",required = false) String verificationCode,
                               HttpServletRequest servletRequest,
                               HttpServletResponse servletResponse){
-        StaffUserShow login = iStaffUserService.login(name, password);
+        StaffUserShow login = iStaffUserService.login(name, password,servletRequest,baiduMapKey,baiduMapUrl,loginDate,verificationCode);
+        StaffUserShow staffUserShow = new StaffUserShow();
+        staffUserShow.setVerificationCode(login.getVerificationCode());
+        if ("false".equals(login.getVerificationCode())){
+            return new ObjectResult("Tver",staffUserShow);
+        }
         if (login!=null){
             int seconds = 60*60*24;
             HttpSession session = servletRequest.getSession();
@@ -66,6 +83,28 @@ public class UserController {
             return new ObjectResult("false","帐号或者密码不正确");
         }
 
+    }
+
+    /**
+     * 验证码
+     * @param name
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/verification/code",method = RequestMethod.GET)
+    public ObjectResult verificationCode(@RequestParam("name")String name,
+                                         HttpServletRequest request) {
+        StaffUserShow userName = iStaffUserService.getUserName(name);
+        if (userName == null ){
+            return new ObjectResult("false","请输入正确的账号");
+        }
+        HttpSession session = request.getSession();
+        session.setAttribute(userName.getName()+userName.getPhone(),"8888");
+        if (codeSession == null ){
+            codeSession = "1";
+        }
+        session.setMaxInactiveInterval(Integer.valueOf(codeSession)*60);
+        return new ObjectResult("true","验证码发送成功,请接收");
     }
 
     /**
@@ -92,7 +131,7 @@ public class UserController {
                                   @RequestParam(value = "pageSize", required = false) Integer pageSize,
                                   @RequestParam(value = "name", required = false) String name,
                                   @RequestParam(value = "phone", required = false) String phone,
-                                  @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
+                                  @CookieValue(value = "youqitoken",required = false) String cookieValue){
         ConditionShow conditionShow = new ConditionShow();
         conditionShow.setCurrentPage(currentPage);
         conditionShow.setPageSize(pageSize);
@@ -135,14 +174,15 @@ public class UserController {
 
 
     /**
-     * 添加用户
+     * 添加用户(默认为代理)
      * @param staffUserShow
      * @param cookieValue
      * @return
      */
     @RequestMapping(value = "/user.do",method = RequestMethod.POST)
     public ObjectResult addUser(@RequestBody StaffUserShow staffUserShow,
-                                @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
+                                @CookieValue(value = "youqitoken",required = false) String cookieValue){
+
         return null;
     }
 
@@ -155,7 +195,7 @@ public class UserController {
      */
     @RequestMapping(value = "/{id}/user.do",method = RequestMethod.PUT)
     public ObjectResult updateUser(@RequestBody StaffUserShow staffUserShow,
-                                   @CookieValue(value = "youqitoken",required = false) CookieValue cookieValue){
+                                   @CookieValue(value = "youqitoken",required = false) String cookieValue){
         return null;
     }
 

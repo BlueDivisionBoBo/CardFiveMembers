@@ -4,16 +4,21 @@ function loginIn() {
     if (name == null || "" == name.trim() || password == null || "" == password.trim()) {
         alert("用户名或密码..不能为空");
     }
+    var verifycode = $("#verifycode").val();
+    if(verifycode == null || "" == verifycode.trim()){
+        verifycode = null;
+    }
     var data = {};
     data.name = name;
     data.password = password;
     data.date = new Date().getTime();
+    data.verificationCode = verifycode;
     PPn(data, loginAjax);
 }
 
 function PPn(data, callback) {
     $.ajax({
-        url: "api//ppn",
+        url: "api/ppn",
         method: "GET",
         data: data,
         success: function (dtt) {
@@ -42,16 +47,32 @@ function loginAjax(data) {
         method: "GET",
         data: data,
         success: function (dat) {
-            if (dat.status == "true") {
-                window.location.href = 'index.do';
-            } else {
-                //alert(dat.message);
-                $(".errorInfo").text(dat.message);
+            if(dat.status == "Tver" && "false" == dat.message.verificationCode){//发送验证码
+                verification_code(data);
+                $(".verifyBox").show();
+            }else {
+                $(".verifyBox").hide();
+                if (dat.status == "true") {
+                    window.location.href = 'index.do';
+                } else {
+                    //alert(dat.message);
+                    $(".errorInfo").text(dat.message);
+                }
             }
+
         }
     });
 }
 
+function verification_code(vJson) {
+    $.ajax({
+        url:"api/verification/code",
+        method:"GET",
+        data:vJson,
+        success:function (dat) {
+        }
+    })
+}
 
 //input 输入框聚焦 失焦事件
 function iptfoucs() {
@@ -97,5 +118,5 @@ $("#getValidcode").on("click",function(){
 
 $(function(){
     iptfoucs();
-
+     $(".verifyBox").hide();
 })

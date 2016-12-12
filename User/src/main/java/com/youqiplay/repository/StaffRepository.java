@@ -25,4 +25,7 @@ public interface StaffRepository extends JpaRepository<StaffUser, Integer> {
 
     @Query(" select o from StaffUser o where o.id = ?1")
     StaffUser getUser(Integer uid);
+
+    @Query(" select o from StaffUser o where o.account = ?1 or o.phone = ?1")
+    StaffUser getUserName(String name);
 }

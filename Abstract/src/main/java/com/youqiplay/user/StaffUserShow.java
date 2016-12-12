@@ -11,16 +11,16 @@ public class StaffUserShow {
     private int id;
     private String name;//名称
     private String image;//图片
-    @JsonIgnore
+    private String verificationCode;//是否发送验证码
+    private String announcement;//公告
     private String pp;//密码保护码
     private String phone;//电话号码
     private String account;//帐号
     @JsonIgnore
     private String password;//密码
-    @JsonIgnore
     private int level;//角色: 1:超级管理员 2:代理管理员
     @JsonIgnore
-    private int safety;//安全设置开关 : 1:开 2:关
+    private int safety;//安全设置开关 : 1:开 2:关 默认为:2
     @JsonIgnore
     private Date modifyDate; //修改时间
     @JsonIgnore
@@ -31,6 +31,23 @@ public class StaffUserShow {
     private String createUser; //创建用户
     @JsonIgnore
     private Character isEnable; //是否可用
+
+
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
+
+    public String getAnnouncement() {
+        return announcement;
+    }
+
+    public void setAnnouncement(String announcement) {
+        this.announcement = announcement;
+    }
 
     public int getId() {
         return id;

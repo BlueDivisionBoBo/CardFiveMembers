@@ -39,11 +39,8 @@ public class BeanShift {
                 }
                 afterMethod.invoke(after,beforInvoke);
             }catch (NoSuchMethodException e){
-                e.printStackTrace();
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
             } catch (InvocationTargetException e) {
-                e.printStackTrace();
             }
 
         }
